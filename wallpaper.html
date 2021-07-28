@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> 襪得-Wonder! </title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="stylemonthly.css">
+  <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+  <script>
+    // 改id 圖片和div
+    //畢業
+    $(function() {
+      $("#dialog").dialog({
+        autoOpen: false,
+        width: 800,
+        height: 600,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        },
+        buttons: {
+
+        }
+      });
+      $("#opener").click(function() {
+        $("#dialog").dialog("open");
+        //$("#dialog").css("","");
+        $("#dialog").css("background-color", "rgba(255, 224, 221, 0.41)");
+        $("#dialog").css("border-color", "black");
+        $("#dialog").css("text-align", "center");
+      });
+    });
+    //端午
+    $(function() {
+      $("#dialog1").dialog({
+        autoOpen: false,
+        width: 800,
+        height: 600,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        },
+        buttons: {
+
+        }
+      });
+      $("#opener1").click(function() {
+        $("#dialog1").dialog("open");
+        //$("#dialog").css("","");
+        $("#dialog1").css("background-color", "rgba(221, 255, 225, 0.41)");
+        $("#dialog1").css("border-color", "black");
+        $("#dialog1").css("text-align", "center");
+      });
+    });
+    //七月
+    $(function() {
+      $("#dialog2").dialog({
+        autoOpen: false,
+        width: 800,
+        height: 600,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        },
+        buttons: {
+
+        }
+      });
+      $("#opener2").click(function() {
+        $("#dialog2").dialog("open");
+        //$("#dialog").css("","");
+        $("#dialog2").css("background-color", "rgba(148, 222, 252, 0.43)");
+        $("#dialog2").css("border-color", "black");
+        $("#dialog2").css("text-align", "center");
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+
+  <!--下拉式選單-->
+
+  <div class="menu-bar">
+    <ul>
+      <li class="logo"><img src="logo_black.png" width="140" height="50"></li>
+      <li><a href="index.html" width="150" height="40">首頁</a></li>
+      <li><a href="#">設計理念</a>
+        <div class="sub-menu-1">
+          <ul>
+            <li class="hover-me-1"><a herf="#">Meet</a><i class="fa fa-angle-right"></i>
+              <div class="sub-sub-menu-1">
+                <ul>
+                  <li><a href="meet_topic.html">主題</a></li>
+                  <li><a href="meet_outfit.html">包裝</a></li>
+                  <li><a href="meet_sticker.html">貼圖</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+            <li class="hover-me-2"><a herf="#">Tour</a><i class="fa fa-angle-right"></i>
+              <div class="sub-sub-menu-2">
+                <ul>
+                  <li><a href="tour_topic.html">主題</a></li>
+                  <li><a href="tour_outfit.html">包裝</a></li>
+                  <li><a href="tour_sticker.html">貼圖</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+
+          <ul>
+            <li><a href="beetle.html">甲蟲</a></i></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">得展棉業</a>
+        <div class="sub-menu-1">
+          <ul>
+            <li class="hover-me-1"><a href="about_easyfit.html">關於得展</a><i class="fa fa-angle-right"></i>
+            </li>
+          </ul>
+          <ul>
+            <li class="hover-me-2"><a href="easyfit_feature.html">得展特色</a><i class="fa fa-angle-right"></i></li>
+          </ul>
+          <ul>
+            <li class="hover-me-3"><a href="easyfit_product.html">得展商品</a><i class="fa fa-angle-right"></i>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="wallpaper.html">每月主題</a></li>
+    </ul>
+  </div>
+
+
+  <!-- 每月主題內容 -->
+
+  <div id="dialog" title="June" class="dialog">
+    <img class="pic1-1" src="每月主題_桌布/六月IG.png" width="350" height="350">
+    <h3>[畢業季特別篇-阿P]</h3>
+    <b>畢業快樂~<br>
+      雖然疫情關係畢業典禮取消了<br>
+      或是改成線上的<br>
+      不過這可是你們少數人才能永遠的回憶呢! <br>
+      別忘了跟自己說聲<br>
+      辛苦了!!!!畢業快樂!!!!!!🎓<br>
+      <br><br>
+    </b>
+  </div>
+  <div id="dialog1" title="June" class="dialog">
+    <img class="pic1-1" src="每月主題_桌布/端午六月IG.png" width="350" height="350">
+    <h3>[端午特別篇-蛙靜]</h3>
+    <b>row~row~row a boat<br>
+      但我划的是dragon boat<br>
+      勇敢往前衝吧！呱🐸<br>
+      粽子吃飽飽Go！Go！Go！<br>
+      <br>
+      <br>
+      <br><br>
+    </b>
+  </div>
+  <div id="dialog2" title="July" class="dialog">
+    <img class="pic1-1" src="每月主題_桌布/七月IG.png" width="350" height="350">
+    <h3>[暑假特別篇-木木 & 阿P]</h3>
+    <b>木木:暑假來啦 PP有要做什麼嗎?<br>
+      阿P:吃西瓜~玩水~~~<br>
+      木木:疫情不能出門<br>
+      阿P:想像也不行嗎?<br>
+      木木:那我要去衝浪!<br>
+      阿P:希望疫情趕快好起來~~~<br>
+      木木:祝大家暑假開心大快樂~~~~~~~<br><br>
+    </b>
+  </div>
+
+
+
+  <!-- 簡介頁面 -->
+
+  <div class="month">
+    <p>每月主題</p>
+    <!-- 六月 -->
+    <div>
+      <table width="250" height="350" class="pic">
+        <tr>
+          <td><button id="opener"><img src="每月主題_桌布/六月IG.png" width="250" height="250"></button></td>
+        </tr>
+        <tr>
+          <td>畢業季<br><a href="junewallpaper.html" target="_blank">點此下載桌布</a></td>
+        </tr>
+      </table>
+      <table width="250" height="350" class="pic2">
+        <tr>
+          <td><button id="opener1"><img  src="每月主題_桌布/端午六月IG.png" width="250" height="250"></button></td>
+        </tr>
+        <tr>
+          <td>端午節<br><a href="june2wallpaper.html" target="_blank">點此下載桌布</a></td>
+        </tr>
+      </table>
+    </div>
+    <!-- 七月+八月 -->
+    <div>
+      <table width="250" height="350" class="pic">
+        <tr>
+          <td><button id="opener2"><img  src="每月主題_桌布/七月IG.png" width="250" height="250"></button></td>
+        </tr>
+        <tr>
+          <td>Fun暑假<br><a href="julywallpaper.html" target="_blank">點此下載桌布</a></td>
+        </tr>
+      </table>
+
+    </div>
+    <!-- 九月 -->
+
+  </div>
+
+
+
+  <!--聯絡我們-->
+
+  <div class="footer">
+    <div class="container-2">
+      <div class="row">
+        <div class="footer-col-1">
+          <img src="logo_white.png" width="200" height="80">
+        </div>
+        <div class="footer-col-2">
+          <h3>聯絡我們</h3>
+          <p>FB: <a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132">遇見Easyfit，陪你遊台灣</a></p>
+          <p>IG: <a href="https://www.instagram.com/easyfit_tour_meet/">六人行</a></p>
+          <p>E-mail: friends2021111@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
