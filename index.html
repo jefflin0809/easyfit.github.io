@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 襪得-Wonder! </title>
+    <link rel="stylesheet" href="index.css">
+    
+</head>
+
+<body>
+
+<!--下拉式選單-->
+
+<div class="menu-bar">  
+    <ul>
+        <li class="logo"><img src="logo_black.png" width="140" height="50"></li>
+        <li><a href="index.html" width="150" height="40">首頁</a></li>
+        <li><a href="#">設計理念</a>
+            <div class="sub-menu-1">
+                <ul>
+                        <li class="hover-me-1"><a herf="#">Meet</a><i class="fa fa-angle-right"></i>
+                            <div class="sub-sub-menu-1">
+                                <ul>
+                                    <li><a href="meet_topic.html">主題</a></li>
+                                    <li><a href="meet_outfit.html">包裝</a></li>
+                                    <li><a href="meet_sticker.html">貼圖</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                </ul>        
+            
+                <ul>
+                        <li class="hover-me-2"><a herf="#">Tour</a><i class="fa fa-angle-right"></i>
+                            <div class="sub-sub-menu-2">
+                                <ul>
+                                    <li><a href="tour_topic.html">主題</a></li>
+                                    <li><a href="tour_outfit.html">包裝</a></li>
+                                    <li><a href="tour_sticker.html">貼圖</a></li>
+                                </ul>
+                            </div>   
+                        </li>   
+                </ul>   
+                
+                <ul>
+                    <li><a href="beetle.html">甲蟲</a></li>     
+                </ul> 
+            </div>
+        </li>
+        <li><a href="#">得展棉業</a>
+            <div class="sub-menu-2">
+                <ul>
+                    <li><a href="about_easyfit.html">關於得展</a><i class="fa fa-angle-right"></i></li>
+                </ul> 
+                <ul>
+                    <li><a href="easyfit_feature.html">得展特色</a><i class="fa fa-angle-right"></i></li>
+                </ul> 
+                <ul>
+                    <li><a href="easyfit_product.html">得展商品</a><i class="fa fa-angle-right"></i></li>
+                </ul>   
+            </div>
+        </li>
+        <li><a href="wallpaper.html">每月主題</a></li>
+    </ul>
+</div>   
+
+
+
+<!--輪播圖-->
+
+<div id="container">
+    <div class="show fade">
+        <img src="首頁輪播圖/Picture1.jpg" width="1000px" height="700px">
+        <div class="caption"> 1 / 3 &nbsp; </div>
+    </div>
+    <div class="show fade">
+        <img src="首頁輪播圖/Picture2.png" width="1000px" height="700px">
+        <div class="caption"> 2 / 3 &nbsp; </div>
+    </div>
+    <div class="show fade">
+        <img src="首頁輪播圖/Picture3.png" width="1000px" height="700px">
+        <div class="caption"> 3 / 3 &nbsp; </div>
+    </div>
+
+    <span class="leftArrow" id="left">&#10094</span>
+    <span class="rightArrow" id="right">&#10095</span>
+
+    <div class="circle">
+        <ul>
+            <li class="mark active" id="mark1"></li>
+            <li class="mark" id="mark2"></li>
+            <li class="mark" id="mark3"></li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    var mark = document.getElementsByClassName("mark");
+    var show = document.getElementsByClassName("show");
+    var index = 1;
+    show[0].style.display = 'block';
+    var rightArrow = document.getElementById("right");
+    var leftArrow = document.getElementById("left");
+    rightArrow.onclick = nextImg;
+    leftArrow.onclick = prevImg;
+
+    function nextImg()
+    {
+        if(index >= show.length)
+        {
+            index = 0;
+        }
+        for(var i=0;i<show.length;i++)
+        {
+            show[i].style.display = 'none';
+        }
+        show[index].style.display = 'block';
+        index++;
+    }
+
+    function prevImg()
+    {
+        if(index < 1)
+        {
+            index = show.length;
+        }
+        for(var i=0;i<show.length;i++)
+        {
+            show[i].style.display = 'none';
+        }
+        show[index-1].style.display = 'block';
+        index--;
+    }
+
+    var mark1 = document.getElementById('mark1');
+    var mark2 = document.getElementById('mark2');
+    var mark3 = document.getElementById('mark3');
+    mark1.onclick = clickMark1;
+    mark2.onclick = clickMark2;
+    mark3.onclick = clickMark3;
+
+    function clickMark1()
+    {
+        show[0].style.display = 'block';
+        show[1].style.display = 'none';
+        show[2].style.display = 'none';
+        animation();
+        this.classList.add("active");
+    }
+    function clickMark2()
+    {
+        show[1].style.display = 'block';
+        show[0].style.display = 'none';
+        show[2].style.display = 'none';
+        animation();
+        this.classList.add("active");
+    }
+    function clickMark3()
+    {
+        show[2].style.display = 'block';
+        show[0].style.display = 'none';
+        show[1].style.display = 'none';
+        animation();
+        this.classList.add("active");
+    }
+    function animation()
+    {
+        for(a of mark)
+        {
+            a.classList.remove("active");
+        }
+    }
+</script>
+
+<!--關於我們-->  
+
+<div class="about-us">
+    <h1>關於我們</h1>
+    <div class="region">
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="circle-3"></div>
+    <div class="circle-4"></div>
+        <div class="article">
+            <p>我們是國立彰化師範大學資訊管理學系的學生，夥伴一共有六位，並以「六人行」這個隊名活動著，不久前以得展棉業Easyfit這個品牌做發想，延伸出了兩個屬於我們的文創商品，分別是Easymeet及Easytour。主要是想分享緣分的奧妙以及台灣的在地風情，加上我們快要畢業了，想把這份美好及回憶與大家分享！因此我們創辦了fb跟ig這兩個粉絲專頁來推廣得展及分享我們的文創商品，也請大家多多指教！</p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--最新消息-->
+
+<div class="news">
+    <h1>最新消息</h1>
+        <div class="line"></div>
+        <div class="container-1">
+            <p><a href="wallpaper.html">1、最新7月的主題出來囉~(點我前往)</a></p>
+            <p><a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132">2、我們開設了FB粉專囉~(點我前往)</a></p>
+            <p><a href="https://www.instagram.com/easyfit_tour_meet/">3、我們instagram帳號也創立囉~(點我前往)</a></p>
+        </div>
+</div>
+
+
+
+<!--聯絡我們-->
+
+<div class="footer">
+    <div class="container-2">
+        <div class="row">
+            <div class="footer-col-1">
+                <img src="logo_white.png" width="200" height="80">
+            </div>
+            <div class="footer-col-2">
+                <h3>聯絡我們</h3>
+                <p>FB: <a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132">遇見Easyfit，陪你遊台灣</a></p>
+                <p>IG: <a href="https://www.instagram.com/easyfit_tour_meet/">六人行</a></p>
+                <p>E-mail: friends2021111@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
