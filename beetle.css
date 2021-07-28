@@ -1,0 +1,378 @@
+/* 整體 */
+
+*
+{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: 微軟正黑體;
+     font-family: fantasy;
+}
+
+body
+{
+    background-color: rgb(250,244,222); /*背景顏色*/
+    font-family: Comic Sans MS;
+}
+
+/* 下拉式選單 */
+
+.menu-bar
+{
+    background-color: rgb(216,226,220); /*選單顏色*/
+    text-align: center;
+}
+
+.menu-bar ul    /*設計選單的形式*/
+{
+    display: inline-flex;
+    list-style: none;
+    color:rgb(0,0,0);
+}
+
+.menu-bar ul li  
+{
+    width: 150px;
+    margin: 15px;
+    padding: 0px;    
+}
+
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: rgb(0,0,0); /*選單中，字的顏色*/
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.menu-bar ul li:hover
+{
+    background:rgb(94, 100, 114);
+    border-radius: 3px;
+}
+
+.menu-bar ul li:hover a 
+{
+    color:rgb(255,255,255);
+}
+
+.sub-menu-1 , .sub-menu-2
+{
+    display: none;
+}
+
+.sub-sub-menu-1 , .sub-sub-menu-2 , .sub-sub-menu-3
+{
+    display: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 
+{
+    display: block;
+    position: absolute;
+    background: rgb(94, 100, 114);
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-2
+{
+    display: block;
+    position: absolute;
+    background: rgb(94, 100, 114);
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul
+{
+    display: block;
+    margin: 10px;  
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul
+{
+    display: block;
+    margin: 10px;  
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li
+{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li a:hover
+{
+    color: rgb(255,255,255);
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li
+{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li:last-child
+{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li a:hover
+{
+    color: rgb(255,255,255);
+}
+
+.fa-angle-right
+{
+    float: right;
+}
+
+.hover-me-1:hover .sub-sub-menu-1
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 85px;
+    background:rgb(94, 100, 114);
+    z-index: 3;
+}
+
+.hover-me-2:hover .sub-sub-menu-2
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 85px;
+    background:rgb(94, 100, 114);
+    z-index: 3;
+}
+
+.linking_bar
+{
+    background-color:rgb(94, 100, 114) ;
+}
+
+/* 甲蟲流行語路 */
+
+.title
+{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.introduction h3    
+{
+    text-align: center;
+    font-size: 30px;
+}
+
+.region
+{
+    width:70%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(248,237,235);  
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.circle-1 
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.circle-2
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.circle-3
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position:absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.circle-4
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.article p
+{
+    font-size: 25px;
+    letter-spacing: 5px; /* 設定字跟字的間距 */
+    line-height: 40px; /* 設定行間距 */
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;  
+}
+
+.photo h3
+{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+
+.pic3
+{
+    padding-right: 5px;
+    padding-bottom: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 10px;
+    width: 350px;
+    height: 350px;
+}
+
+
+
+
+.tour p
+{
+  margin-top: 25px;
+  margin-left: 200px;
+  color: rgb(255, 152, 161);
+  font-size: 150px;
+}
+.tourfonta
+{
+  color: rgb(94, 100, 114) ;
+  font-size: 120px;
+}
+.tourfontb
+{
+  color: rgb(94, 100, 114) ;
+  font-size: 25px;
+  margin-left: 80px;
+}
+
+.pic{
+  margin-left: 370px;
+  margin-top: 50px;
+}
+.pic1{
+  margin-left: 80px;
+  width: 200px;
+  height: 200px;
+}
+.pic2{
+  margin-left: 500px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.button{
+  border-radius: 5px;
+  position:absolute;
+  left:50%;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #26C9A3;
+  color: white;
+  letter-spacing: 1px;
+  font-weight: 2px;
+}
+.button a
+{
+    color: rgb(255,255,255);
+    text-decoration: none;
+}
+.bee p{
+  margin-top: 25px;
+  margin-left: 350px;
+  font-size: 75px;
+  color: rgb(94, 100, 114) ;
+}
+
+
+/*  聯絡我們  */
+
+.footer
+{
+    background-color:rgb(94, 100, 114);
+    font-size: 14px;
+    padding: 20px 0 20px;
+}
+
+.footer h3
+{
+    color:rgb(255,255,255);
+}
+
+.footer p
+{
+    color:rgb(255,255,255);
+}
+
+.footer p a
+{
+    color:rgb(255,255,255);
+    text-decoration-line: none;
+}
+
+.container-2
+{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
