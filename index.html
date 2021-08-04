@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 襪得-Wonder! </title>
     <link rel="stylesheet" href="index.css">
-    
 </head>
 
 <body>
+
+<script src="index.js"></script>
 
 <!--下拉式選單-->
 
@@ -69,110 +70,121 @@
 
 <!--輪播圖-->
 
-<div id="container">
-    <div class="show fade">
-        <img src="首頁輪播圖/Picture1.jpg" width="1000px" height="700px">
-        <div class="caption"> 1 / 3 &nbsp; </div>
+<div class="slider" id="slider">
+    <div class="slider_main" id="slider_main">
+        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="1000px" height="700px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture1.jpg" width="1000px" height="700px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture2.png" width="1000px" height="700px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="1000px" height="700px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture1.jpg" width="1000px" height="700px"></div>
     </div>
-    <div class="show fade">
-        <img src="首頁輪播圖/Picture2.png" width="1000px" height="700px">
-        <div class="caption"> 2 / 3 &nbsp; </div>
-    </div>
-    <div class="show fade">
-        <img src="首頁輪播圖/Picture3.png" width="1000px" height="700px">
-        <div class="caption"> 3 / 3 &nbsp; </div>
-    </div>
-
-    <span class="leftArrow" id="left">&#10094</span>
-    <span class="rightArrow" id="right">&#10095</span>
-
-    <div class="circle">
-        <ul>
-            <li class="mark active" id="mark1"></li>
-            <li class="mark" id="mark2"></li>
-            <li class="mark" id="mark3"></li>
-        </ul>
-    </div>
-
+    <span id="left"> &lt </span>
+    <span id="right"> &gt </span>
+    <ul class="nav" id="nav">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
 </div>
 
 <script>
-    var mark = document.getElementsByClassName("mark");
-    var show = document.getElementsByClassName("show");
+    var slider = document.getElementById('slider');
+    var oNavlist = document.getElementById('nav').children;
+    var slider_main = document.getElementById('slider_main');
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
     var index = 1;
-    show[0].style.display = 'block';
-    var rightArrow = document.getElementById("right");
-    var leftArrow = document.getElementById("left");
-    rightArrow.onclick = nextImg;
-    leftArrow.onclick = prevImg;
+    var timer;
+    var isMoving = false;
 
-    function nextImg()
+function next()
+{
+    if(isMoving)
     {
-        if(index >= show.length)
-        {
-            index = 0;
-        }
-        for(var i=0;i<show.length;i++)
-        {
-            show[i].style.display = 'none';
-        }
-        show[index].style.display = 'block';
-        index++;
+        return;
+    }
+    isMoving = true;
+    index++;
+    navChange();
+    animate(slider_main,{left:-1000*index},function(){
+    if(index === 4)
+    {
+        slider_main.style.left = "-1000px";
+        index = 1;
+    }
+    isMoving = false; 
+    }) 
+}
+
+
+
+function pre()
+{
+    if(isMoving)
+{
+    return;
+}
+    isMoving = true;
+    index--;
+    navChange();
+    animate(slider_main,{left:-1000*index},function(){
+    if(index === 0)
+    {
+        slider_main.style.left = "-3000px";
+        index = 3;
+    }
+    isMoving = false; 
+});
+}
+
+    var timer = setInterval(next,3000);
+    
+    slider.onmouseover = function()
+    {
+        clearInterval(timer);
     }
 
-    function prevImg()
+    slider.onmouseout = function()
     {
-        if(index < 1)
-        {
-            index = show.length;
-        }
-        for(var i=0;i<show.length;i++)
-        {
-            show[i].style.display = 'none';
-        }
-        show[index-1].style.display = 'block';
-        index--;
+        timer = setInterval(next,3000);
     }
 
-    var mark1 = document.getElementById('mark1');
-    var mark2 = document.getElementById('mark2');
-    var mark3 = document.getElementById('mark3');
-    mark1.onclick = clickMark1;
-    mark2.onclick = clickMark2;
-    mark3.onclick = clickMark3;
+   right.onclick = next;
+    
+    left.onclick = pre;
 
-    function clickMark1()
+    for(var i=0;i<oNavlist.length;i++)  
     {
-        show[0].style.display = 'block';
-        show[1].style.display = 'none';
-        show[2].style.display = 'none';
-        animation();
-        this.classList.add("active");
-    }
-    function clickMark2()
-    {
-        show[1].style.display = 'block';
-        show[0].style.display = 'none';
-        show[2].style.display = 'none';
-        animation();
-        this.classList.add("active");
-    }
-    function clickMark3()
-    {
-        show[2].style.display = 'block';
-        show[0].style.display = 'none';
-        show[1].style.display = 'none';
-        animation();
-        this.classList.add("active");
-    }
-    function animation()
-    {
-        for(a of mark)
-        {
-            a.classList.remove("active");
+        oNavlist[i].idx = i;  // i依序給按鈕號碼(是物件就能賦予值style)
+        oNavlist[i].onclick = function(){
+            index = this.idx + 1;        //圖片和按鈕下標差1
+            navChange();
+            animate(slider_main,{left:-1000*index});
         }
+    }
+
+    function navChange()
+    {
+        for(var i=0;i<oNavlist.length;i++)
+        {
+            oNavlist[i].className = '';
+        }
+        if(index === 4)
+        {
+            oNavlist[0].className = 'active';
+        }
+        else if(index === 0)
+        {
+            oNavlist[2].className = 'active';
+        }
+        else
+        {
+            oNavlist[index-1].className = 'active';
+        }
+        
     }
 </script>
+
 
 <!--關於我們-->  
 
@@ -197,9 +209,9 @@
     <h1>最新消息</h1>
         <div class="line"></div>
         <div class="container-1">
-            <p><a href="wallpaper.html">1、最新7月的主題出來囉~(點我前往)</a></p>
-            <p><a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132">2、我們開設了FB粉專囉~(點我前往)</a></p>
-            <p><a href="https://www.instagram.com/easyfit_tour_meet/">3、我們instagram帳號也創立囉~(點我前往)</a></p>
+            <p><a href="wallpaper.html" id="news1"> 1、最新7月的主題出來囉 </a></p>
+            <p><a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132" id="news2">2、新開設FB粉專囉</a></p>
+            <p><a href="https://www.instagram.com/easyfit_tour_meet/" id="news3">3、我們instagram帳號也創立囉</a></p>
         </div>
 </div>
 
@@ -207,7 +219,7 @@
 
 <!--聯絡我們-->
 
-<div class="footer">
+<div class="bottom">
     <div class="container-2">
         <div class="row">
             <div class="footer-col-1">
@@ -222,6 +234,8 @@
         </div>
     </div>
 </div>
+
+
 
 </body>
 </html>
