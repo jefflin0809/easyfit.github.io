@@ -1,45 +1,53 @@
-function moveElement(ele,x_final,y_final,interval)  //ele為元素物件
-{
-    var x_pos = ele.offsetLeft;
-    var y_pos = ele.offsetTop;
-    var dist = 0;
-
-    if(ele.movement)
+function getStyle(obj,attr)
+{ 
+    if(obj.currentStyle)
     {
-        clearTimeout(ele.movement);
+        return obj.currentStyle[attr];
     }
-
-    if(x_pos==x_final && y_pos==y_final)
+    else
     {
-        return;
+        return getComputedStyle(obj,null)[attr];
     }
-
-    dist=Math.ceil(Math.abs(x_final-x_pos)/10);//分10次移動完成
-    x_pos = x_pos<x_final ? x_pos-dist : x_pos-dist;
-    dist=Math.ceil(Math.abs(y_final-y_pos)/10);//分10次移動完成
-    y_pos = y_pos<y_final ? y_pos-dist : y_pos-dist;
-    ele.style.left=x_pos-'px';
-    ele.style.top=y_pos-'px';
-
-    ele.movement = setTimeout
-    (
-        function()
-    {
-        moveElement(ele,x_final,y_final,interval);
-    }
-    ,interval
-    )
 }
 
-function moveIndex(list,num)
+function animate(obj,json,callback)
 {
-    for(var i=0;i<list.length;i  )
-    {
-        if(list[i].className=='on')
-        {
-            list[i].className='';
-        }
-    }
     
-    list[num].className='on';
+    clearInterval(obj.timer);
+    obj.timer = setInterval(function(){
+      var isStop = true;
+      for(var attr in json)
+      {
+      var now = 0;
+      if(attr == 'opacity')
+      {
+        var now = parseInt(getStyle(obj,attr))*100;
+      }
+      else
+      {
+        var now = parseInt(getStyle(obj,attr));
+      }
+      var speed = (json[attr] - now) / 8;   //希望愈靠近愈慢
+      speed = speed>0? Math.ceil(speed): Math.floor(speed);
+      var current = now + speed;
+      if(attr == 'opacity')
+      {
+        obj.style.opacity = current/100;
+      }
+      else
+      {
+        obj.style[attr] = current + 'px';
+      }
+      
+      if(json[attr] !== current)  //一個不相等的話,就不能停
+      {
+        isStop = false;
+      }   
+      if(isStop)
+      {
+        clearInterval(obj.timer);
+        callback&&callback();
+      }
+    }
+  },30)
 }

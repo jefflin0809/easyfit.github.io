@@ -5,8 +5,6 @@
      padding: 0;
      margin: 0;
      box-sizing: border-box;
-     font-family: 微軟正黑體;
-     font-family: fantasy;
 }
 
 body
@@ -176,90 +174,97 @@ body
 
 /* 輪播圖 */
 
-#container
+ul,li
+{
+    list-style: none;
+}
+
+.slider
 {
     width: 1000px;
     height: 700px;
-    overflow: hidden;
     margin: 0px auto;
     position: relative;
+    overflow: hidden;
 }
 
-.show
+.slider_main
 {
-    display: none;
+    width: 5000px;
+    height: 700px;
+    position: absolute;
+    z-index: 0;
+    left: -1000px;
 }
 
-.show, .show img
+.slider_main .picture
 {
     width: 1000px;
     height: 700px;
-    position: absolute;
+    float: left;
 }
 
-.caption
+.slider > span
 {
-    position: absolute;
-    z-index: 1;
-    color: rgb(0,0,0);
-    padding: 1rem 0 0 1rem;
-    font-size: 20px;
-}
-
-.leftArrow , .rightArrow
-{
-    color: rgb(255,255,255);
-    font-size: 35px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0,-50%);
     display: block;
-    width: 40px;
-    height: 55px;
-    cursor: pointer;
+    width: 30px;
+    height: 50px;
     text-align: center;
-    transition: 0.3s ease;
+    cursor: pointer;
+    top: 350px;
+    line-height: 50px;
+    color: rgb(0,0,0);
+    background: rgb(255,255,255);
+    font-size: 40px;
+    position: absolute;
+    opacity: 0.5;
 }
 
-.rightArrow
+#left
 {
-    right: 0;
+    left: 15px;
 }
 
-.leftArrow:hover , .rightArrow:hover
+#right
 {
-    background-color: rgb(0,0,0);
+    right: 15px;
 }
 
-.circle
+#left:hover
+{
+    background: rgb(255,255,255);
+    opacity: 0.3;
+}
+
+#right:hover
+{
+    background: rgb(255,255,255);
+    opacity: 0.3;
+}
+
+.nav
 {
     position: absolute;
-    bottom: 1rem;
-    width: 100%;
-    text-align: center;
+    bottom: 20px;
+    left: 450px;
 }
 
-.mark
+.nav li
 {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: rgb(255,255,255);
-    padding: 8px;
-    border-radius: 50%;
+    float: left;
+    width: 20px;
+    height: 20px;
+    background:rgb(255,255,255);
     cursor: pointer;
-    transition: 0.2s ease;
+    border-radius: 50%;
+    margin-right: 15px;
 }
 
-.active
+.nav .active
 {
-    background-color: rgb(0,0,0);
+    background: rgb(94, 100, 114);
 }
 
-.mark:hover
-{
-    background-color: rgb(0,0,0);
-}
 
 
 /*  關於我們  */
@@ -390,32 +395,54 @@ body
     text-decoration: none;
 }
 
+#news1:hover 
+{
+    text-decoration: underline;
+}
+
+#news2:hover 
+{
+    text-decoration: underline;
+}
+
+#news3:hover 
+{
+    text-decoration: underline;
+}
+
 
 
 /*  聯絡我們  */
 
-.footer
+.bottom
 {
     background-color:rgb(94, 100, 114);
     font-size: 14px;
     padding: 20px 0 20px;
 }
 
-.footer h3
+.footer-col-2 h3
 {
     color:rgb(255,255,255);
 }
 
-.footer p
+.footer-col-2 p
 {
     color:rgb(255,255,255);
     font-family: Microsoft JhengHei;
 }
 
-.footer p a
+.footer-col-2 a
 {
     color:rgb(255,255,255);
-    text-decoration-line: none;
+    text-decoration: none;
+    font-family: Microsoft JhengHei;
+}
+
+.footer-col-2 a:hover
+{
+    color: rgb(250,244,222);
+    text-decoration: underline;
 }
 
 .container-2
@@ -433,3 +460,4 @@ body
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
