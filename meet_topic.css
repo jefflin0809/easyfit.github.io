@@ -5,14 +5,12 @@
      padding: 0;
      margin: 0;
      box-sizing: border-box;
-     font-family: 微軟正黑體;
-     font-family: fantasy;
+     font-family: Microsoft JhengHei;
 }
 
 body
 {
     background-color: rgb(250,244,222); /*背景顏色*/
-    font-family: Comic Sans MS;
 }
 
 /* 下拉式選單 */
@@ -434,6 +432,12 @@ body
 {
     color:rgb(255,255,255);
     text-decoration-line: none;
+}
+
+.footer-col-2 a:hover
+{
+    color: rgb(250,244,222);
+    text-decoration: underline;
 }
 
 .container-2
