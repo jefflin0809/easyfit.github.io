@@ -72,11 +72,11 @@
 
 <div class="slider" id="slider">
     <div class="slider_main" id="slider_main">
-        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="1000px" height="700px"></div>
-        <div class="picture"><img src="首頁輪播圖/Picture1.jpg" width="1000px" height="700px"></div>
-        <div class="picture"><img src="首頁輪播圖/Picture2.png" width="1000px" height="700px"></div>
-        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="1000px" height="700px"></div>
-        <div class="picture"><img src="首頁輪播圖/Picture1.jpg" width="1000px" height="700px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="900px" height="630px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture1.jpg" width="900px" height="630px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture2.png" width="900px" height="630px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="900px" height="630px"></div>
+        <div class="picture"><img src="首頁輪播圖/Picture1.jpg" width="900px" height="630px"></div>
     </div>
     <span id="left"> &lt </span>
     <span id="right"> &gt </span>
@@ -106,10 +106,10 @@ function next()
     isMoving = true;
     index++;
     navChange();
-    animate(slider_main,{left:-1000*index},function(){
+    animate(slider_main,{left:-900*index},function(){
     if(index === 4)
     {
-        slider_main.style.left = "-1000px";
+        slider_main.style.left = "-900px";
         index = 1;
     }
     isMoving = false; 
@@ -121,20 +121,21 @@ function next()
 function pre()
 {
     if(isMoving)
-{
-    return;
-}
+    {
+        return;
+    }
     isMoving = true;
     index--;
     navChange();
-    animate(slider_main,{left:-1000*index},function(){
-    if(index === 0)
+    animate(slider_main,{left:-900*index},function()
     {
-        slider_main.style.left = "-3000px";
-        index = 3;
-    }
-    isMoving = false; 
-});
+        if(index === 0)
+        {
+            slider_main.style.left = "-2700px";
+            index = 3;
+        }
+        isMoving = false; 
+    })
 }
 
     var timer = setInterval(next,3000);
@@ -149,7 +150,7 @@ function pre()
         timer = setInterval(next,3000);
     }
 
-   right.onclick = next;
+    right.onclick = next;
     
     left.onclick = pre;
 
@@ -159,7 +160,7 @@ function pre()
         oNavlist[i].onclick = function(){
             index = this.idx + 1;        //圖片和按鈕下標差1
             navChange();
-            animate(slider_main,{left:-1000*index});
+            animate(slider_main,{left:-900*index});
         }
     }
 

@@ -181,8 +181,8 @@ ul,li
 
 .slider
 {
-    width: 1000px;
-    height: 700px;
+    width: 900px;
+    height: 630px;
     margin: 0px auto;
     position: relative;
     overflow: hidden;
@@ -190,17 +190,17 @@ ul,li
 
 .slider_main
 {
-    width: 5000px;
-    height: 700px;
+    width: 4500px;
+    height: 630px;
     position: absolute;
     z-index: 0;
-    left: -1000px;
+    left: -900px;
 }
 
 .slider_main .picture
 {
-    width: 1000px;
-    height: 700px;
+    width: 900px;
+    height: 630px;
     float: left;
 }
 
@@ -211,7 +211,7 @@ ul,li
     height: 50px;
     text-align: center;
     cursor: pointer;
-    top: 350px;
+    top: 315px;
     line-height: 50px;
     color: rgb(0,0,0);
     background: rgb(255,255,255);
@@ -246,7 +246,7 @@ ul,li
 {
     position: absolute;
     bottom: 20px;
-    left: 450px;
+    left: 400px;
 }
 
 .nav li
