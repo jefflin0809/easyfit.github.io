@@ -1,0 +1,337 @@
+/* 整體 */
+
+*
+{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+body
+{
+    background-color: rgb(250,244,222); /*背景顏色*/
+}
+
+
+
+/* 下拉式選單 */
+
+.menu-bar
+{
+    background-color: rgb(216,226,220); /*選單顏色*/
+    text-align: center;
+    font-family: Microsoft JhengHei;
+}
+
+.menu-bar ul    /*設計選單的形式*/
+{
+    display: inline-flex;
+    list-style: none;
+    color:rgb(0,0,0);
+}
+
+.menu-bar ul li  
+{
+    width: 150px;
+    margin: 15px;
+    padding: 0px;    
+}
+
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: rgb(0,0,0); /*選單中，字的顏色*/
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.menu-bar ul li:hover
+{
+    background:rgb(94, 100, 114);
+    border-radius: 3px;
+}
+
+.menu-bar ul li:hover a 
+{
+    color:rgb(255,255,255);
+}
+
+.sub-menu-1 , .sub-menu-2
+{
+    display: none;
+}
+
+.sub-sub-menu-1 , .sub-sub-menu-2 , .sub-sub-menu-3
+{
+    display: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 
+{
+    display: block;
+    position: absolute;
+    background: rgb(94, 100, 114);
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-2
+{
+    display: block;
+    position: absolute;
+    background: rgb(94, 100, 114);
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul
+{
+    display: block;
+    margin: 10px;  
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul
+{
+    display: block;
+    margin: 10px;  
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li
+{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li a:hover
+{
+    color: rgb(255,255,255);
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li
+{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li:last-child
+{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li a:hover
+{
+    color: rgb(255,255,255);
+}
+
+.fa-angle-right
+{
+    float: right;
+}
+
+.hover-me-1:hover .sub-sub-menu-1
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 85px;
+    background:rgb(94, 100, 114);
+    z-index: 3;
+}
+
+.hover-me-2:hover .sub-sub-menu-2
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 85px;
+    background:rgb(94, 100, 114);
+    z-index: 3;
+}
+
+.linking_bar
+{
+    background-color:rgb(94, 100, 114) ;
+}
+
+
+
+/*  Tour設計理念  */
+
+.title h3
+{
+    color:rgb(94, 100, 114);
+    text-align: center;
+    margin-top:25px;
+    margin-bottom: 25px;
+    font-size: 35px;
+}
+
+.region_square
+{
+    width:70%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(248,237,235);  
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.circle-1 
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.circle-2
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position:absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.circle-3
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position:absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.circle-4
+{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background-color: rgb(253,166,156);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.article p
+{
+    font-size: 25px;
+    letter-spacing: 5px; /* 設定字跟字的間距 */
+    line-height: 40px; /* 設定行間距 */
+    padding-top: 50px;
+    padding-left: 40px;
+    padding-right: 40px;    
+}
+
+.meaning p
+{
+    font-size: 25px;
+    letter-spacing: 5px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+
+/* 草稿展示 */
+
+.photo_region
+{
+    margin-top: 120px;
+}
+
+.photo_region h3
+{
+    text-align: center;
+    color: rgb(94, 100, 114);
+    font-size: 35px;
+}
+
+.photo_region_main
+{
+    width: 70%;
+    height: auto;
+    margin: 35px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.photo
+{
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+/*  聯絡我們  */
+
+.bottom
+{
+    background-color:rgb(94, 100, 114);
+    font-size: 14px;
+    padding: 20px 0 20px;
+}
+
+.footer-col-2 h3
+{
+    color:rgb(255,255,255);
+}
+
+.footer-col-2 p
+{
+    color:rgb(255,255,255);
+    font-family: Microsoft JhengHei;
+}
+
+.footer-col-2 a
+{
+    color:rgb(255,255,255);
+    text-decoration: none;
+    font-family: Microsoft JhengHei;
+}
+
+.footer-col-2 a:hover
+{
+    color: rgb(250,244,222);
+    text-decoration: underline;
+}
+
+.container-2
+{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
