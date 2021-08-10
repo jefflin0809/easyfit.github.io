@@ -281,11 +281,9 @@ ul,li
 .region
 {
     width:70%;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    height: auto;
+    margin: 20px auto;
     background-color: rgb(248,237,235);  
-    margin-bottom: 25px;
     position: relative;
 }
 
@@ -339,9 +337,7 @@ ul,li
     font-family: Microsoft JhengHei;
     letter-spacing: 5px; /* 設定字跟字的間距 */
     line-height: 40px; /* 設定行間距 */
-    padding-top: 70px;
-    padding-left: 40px;
-    padding-right: 40px;  
+    padding: 70px 40px;  
 }
 
 
