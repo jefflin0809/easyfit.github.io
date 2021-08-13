@@ -2,14 +2,15 @@
 
 *
 {
-     padding: 0;
-     margin: 0;
-     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  /* 設定width、height大小 */
+    font-family: Microsoft JhengHei;
 }
 
 body
 {
-    background-color: rgb(250,244,222); /*背景顏色*/
+    background-color: rgb(250,244,222);  /*背景顏色*/
 }
 
 
@@ -275,12 +276,12 @@ ul,li
     text-align: center;
     margin-top:25px;
     margin-bottom: 25px;
-    font-family: Microsoft JhengHei;
+    font-family: Microsoft JhengHei;  
 }
 
 .region
 {
-    width:70%;
+    width: 70%;
     height: auto;
     margin: 20px auto;
     background-color: rgb(248,237,235);  
@@ -346,7 +347,6 @@ ul,li
 
 .news
 {
-    display:block;
     margin-bottom: 300px;
 }
 
@@ -356,11 +356,11 @@ ul,li
     height: 1px;
     border-top: solid rgb(0,0,0) 1px;
     margin-top: 10px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.container-1
+.container-2
 {
     max-width: 1300px;
     margin: auto;
@@ -376,16 +376,17 @@ ul,li
     font-family: Microsoft JhengHei;
 }
 
-.container-1 p
+.container-2 span
 {
+    display: flex;
     color:rgb(0,0,0);
-    text-align: left;
+    align-self: center;
     font-size: 30px;   
     font-family: Microsoft JhengHei; 
     padding-top: 15px;
 }
 
-.container-1 a
+.container-2 a
 {
     color:rgb(0,0,0);
     text-decoration: none;
@@ -414,34 +415,10 @@ ul,li
 {
     background-color:rgb(94, 100, 114);
     font-size: 14px;
-    padding: 20px 0 20px;
+    padding: 20px 0 20px;   /* 上 左右 下 */
 }
 
-.footer-col-2 h3
-{
-    color:rgb(255,255,255);
-}
-
-.footer-col-2 p
-{
-    color:rgb(255,255,255);
-    font-family: Microsoft JhengHei;
-}
-
-.footer-col-2 a
-{
-    color:rgb(255,255,255);
-    text-decoration: none;
-    font-family: Microsoft JhengHei;
-}
-
-.footer-col-2 a:hover
-{
-    color: rgb(250,244,222);
-    text-decoration: underline;
-}
-
-.container-2
+.container-3
 {
     max-width: 1300px;
     margin: auto;
@@ -452,8 +429,29 @@ ul,li
 .row
 {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: space-around;
 }
 
+.footer_contact_us h3
+{
+    color:rgb(255,255,255);
+}
+
+.footer_contact_us p
+{
+    color:rgb(255,255,255);
+}
+
+.footer_contact_us a
+{
+    color:rgb(255,255,255);
+    text-decoration: none;
+}
+
+.footer_contact_us a:hover
+{
+    color: rgb(250,244,222);
+    text-decoration: underline;
+}
