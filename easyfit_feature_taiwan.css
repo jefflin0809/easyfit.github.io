@@ -1,0 +1,406 @@
+/* 整體 */
+
+*
+{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: 微軟正黑體;
+     /* font-family: fantasy; */
+
+}
+
+body
+{
+    background-color: rgb(250,244,222); /*背景顏色*/
+    font-family: Comic Sans MS;
+}
+
+/* 下拉式選單 */
+
+.menu-bar
+{
+    background-color: rgb(216,226,220); /*選單顏色*/
+    text-align: center;
+}
+
+.menu-bar ul    /*設計選單的形式*/
+{
+    display: inline-flex;
+    list-style: none;
+    color:rgb(0,0,0);
+}
+
+.menu-bar ul li
+{
+    width: 150px;
+    margin: 15px;
+    padding: 0px;
+}
+
+.menu-bar ul li a
+{
+    text-decoration: none;
+    color: rgb(0,0,0); /*選單中，字的顏色*/
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.menu-bar ul li:hover
+{
+    background:rgb(94, 100, 114);
+    border-radius: 3px;
+}
+
+.menu-bar ul li:hover a
+{
+    color:rgb(255,255,255);
+}
+
+.sub-menu-1 , .sub-menu-2
+{
+    display: none;
+}
+
+.sub-sub-menu-1 , .sub-sub-menu-2 , .sub-sub-menu-3
+{
+    display: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-1
+{
+    display: block;
+    position: absolute;
+    background: rgb(94, 100, 114);
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-2
+{
+    display: block;
+    position: absolute;
+    background: rgb(94, 100, 114);
+    margin-top: 5px;
+    z-index: 3;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul
+{
+    display: block;
+    margin: 10px;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul
+{
+    display: block;
+    margin: 10px;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li
+{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li:last-child
+{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-1 ul li a:hover
+{
+    color: rgb(255,255,255);
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li
+{
+    width: 100px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li:last-child
+{
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover  .sub-menu-2 ul li a:hover
+{
+    color: rgb(255,255,255);
+}
+
+.fa-angle-right
+{
+    float: right;
+}
+
+.hover-me-1:hover .sub-sub-menu-1
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 85px;
+    background:rgb(94, 100, 114);
+    z-index: 3;
+}
+
+.hover-me-2:hover .sub-sub-menu-2
+{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 85px;
+    background:rgb(94, 100, 114);
+    z-index: 3;
+}
+
+.linking_bar
+{
+    background-color:rgb(94, 100, 114) ;
+}
+
+
+
+/*  關於我們  */
+
+.title h1
+{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    background-color: rgb(250,233,225);
+    color:rgb(94, 100, 114);
+    /* position: fixed; */
+    /* z-index:1; */
+}
+
+.region
+{
+    width:70%;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(248,237,235);
+    margin-bottom: 700px;
+    position: relative;
+}
+
+
+.article p
+{
+    font-size: 25px;
+    letter-spacing: 5px; /* 設定字跟字的間距 */
+    line-height: 40px; /* 設定行間距 */
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+
+/* 了解更多 */
+
+.more
+{
+    text-align: right;
+}
+
+.more ul
+{
+    display: inline-flex;
+    list-style: none;
+    margin-right: 40px;
+}
+
+.more a
+{
+    color: rgb(0,0,0);
+    text-decoration: none;
+}
+
+.more ul li:hover a
+{
+    color: rgb(192,192,192);
+}
+
+
+
+/* 聯絡我們 */
+
+.footer
+{
+    background-color:rgb(94, 100, 114);
+    font-size: 14px;
+    padding: 20px 0 20px;
+}
+
+.footer h3
+{
+    color:rgb(255,255,255);
+}
+
+.footer p
+{
+    color:rgb(255,255,255);
+}
+
+.footer p a
+{
+    color:rgb(255,255,255);
+    text-decoration-line: none;
+}
+
+.container-2
+{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* 特色 */
+.about_easyfit{
+  /* margin-left: 250px; */
+}
+
+.feature{
+  /* margin-left: 50px; */
+}
+
+/* 單一介紹 */
+.post1{
+  width: 400px;
+  height: 810px;
+  background-color: #fffffc;
+  margin-left: 80px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+.pic img{
+  margin-top: 25px;
+  border:solid 1px rgb(94, 100, 114,0.5);
+}
+
+/* 輪播 */
+
+.slider_container {
+    width: 380px;
+    height: 380px;
+    position: relative;
+    background-color: #fffffc;
+
+}
+
+.slider_container .demo {
+    position: absolute;
+    border:solid 1px rgb(94, 100, 114,0.5);
+    opacity: 0;
+    margin: 25px;
+    /* filter: alpha(opacity=0); */
+}
+.slider_container  div {
+    /* -webkit-animation: round 25s linear infinite; */
+    animation: round 25s linear infinite;
+}
+.slider_container .demo img{
+  width: 350px;
+  height: 350px;
+
+}
+
+@keyframes round {
+    4% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 0 - 1秒 淡入*/
+    }
+    20% {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        /* 1- 5秒靜止*/
+    }
+    24% {
+        opacity: 0;
+        filter: alpha(opacity=0);
+        /* 5-6秒淡出*/
+    }
+}
+.slider_container div:nth-child(5) {
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+}
+
+.slider_container div:nth-child(4) {
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+}
+
+.slider_container div:nth-child(3) {
+    -webkit-animation-delay: 10s;
+            animation-delay: 10s;
+}
+
+.slider_container div:nth-child(2) {
+    -webkit-animation-delay: 15s;
+            animation-delay: 15s;
+}
+
+.slider_container div:nth-child(1) {
+    -webkit-animation-delay: 20s;
+            animation-delay: 20s;
+}
+
+.slider_container:hover  div {
+            animation-play-state: paused;
+}
+/* 內容 */
+.content {
+ margin-top: 20px;
+}
+.pic{
+  margin: 25px;
+}
+.infor{
+  /* margin-left: 50px; */
+  text-align: center;
+  padding: 0px;
+  color: rgb(94, 100, 114);
+  font-size: 20px;
+  margin-top: -8px;
+}
+.infor1{
+  text-align: center;
+  padding: 0px;
+  margin-top: -15px;
+  margin-bottom: 0px;
+}
+.detail{
+  margin: 20px;
+
+}
+.pos{
+  max-width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
