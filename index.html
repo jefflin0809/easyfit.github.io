@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 襪得-Wonder! </title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<script src="index.js"></script>
+
+<!--下拉式選單-->
+
+<div class="menu-bar">  
+    <ul>
+        <li class="logo"><img src="logo_black.png" width="140" height="50"></li>
+        <li><a href="index.html" width="150" height="40">首頁</a></li>
+        <li><a href="#">設計理念</a>
+            <div class="sub-menu-1">
+                <ul>
+                        <li class="hover-me-1"><a herf="#">Meet</a><i class="fa fa-angle-right"></i>
+                            <div class="sub-sub-menu-1">
+                                <ul>
+                                    <li><a href="meet_topic.html">主題</a></li>
+                                    <li><a href="meet_outfit.html">包裝</a></li>
+                                    <li><a href="meet_sticker.html">貼圖</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                </ul>        
+            
+                <ul>
+                        <li class="hover-me-2"><a herf="#">Tour</a><i class="fa fa-angle-right"></i>
+                            <div class="sub-sub-menu-2">
+                                <ul>
+                                    <li><a href="tour_topic.html">主題</a></li>
+                                    <li><a href="tour_outfit.html">包裝</a></li>
+                                    <li><a href="tour_sticker.html">貼圖</a></li>
+                                </ul>
+                            </div>   
+                        </li>   
+                </ul>   
+                
+                <ul>
+                    <li><a href="beetle.html">甲蟲</a></li>     
+                </ul> 
+            </div>
+        </li>
+        <li><a href="#">得展棉業</a>
+            <div class="sub-menu-2">
+                <ul>
+                    <li><a href="about_easyfit.html">關於得展</a><i class="fa fa-angle-right"></i></li>
+                </ul> 
+                <ul>
+                    <li><a href="easyfit_feature.html">得展特色</a><i class="fa fa-angle-right"></i></li>
+                </ul> 
+                <ul>
+                    <li><a href="easyfit_product.html">得展商品</a><i class="fa fa-angle-right"></i></li>
+                </ul>   
+            </div>
+        </li>
+        <li><a href="wallpaper.html">每月主題</a></li>
+    </ul>
+</div>   
+
+
+
+<!--輪播圖-->
+
+<div class="slider" id="slider">
+    <div class="slider_main" id="slider_main">
+        <div class="picture"><img src="首頁輪播圖/Picture3.png" width="800px" height="450px"></div>
+        <div class="picture"><a href="wallpaper.html"><img src="首頁輪播圖/Picture1.png" width="800px" height="450px"></a></div>
+        <div class="picture"><a href="tour_topic.html"><img src="首頁輪播圖/Picture2.png" width="800px" height="450px"></a></div>
+        <div class="picture"><a href="meet_topic.html"><img src="首頁輪播圖/Picture3.png" width="800px" height="450px"></a></div>
+        <div class="picture"><img src="首頁輪播圖/Picture1.png" width="800px" height="450px"></div>
+    </div>
+    <span id="left"> &lt </span>
+    <span id="right"> &gt </span>
+    <ul class="nav" id="nav">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+    var slider = document.getElementById('slider');
+    var oNavlist = document.getElementById('nav').children;
+    var slider_main = document.getElementById('slider_main');
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    var index = 1;
+    var timer;
+    var isMoving = false;
+
+function next()
+{
+    if(isMoving)
+    {
+        return;
+    }
+    isMoving = true;
+    index++;
+    navChange();
+    animate(slider_main,{left:-800*index},function(){
+    if(index === 4)
+    {
+        slider_main.style.left = "-800px";
+        index = 1;
+    }
+    isMoving = false; 
+    }) 
+}
+
+
+
+function pre()
+{
+    if(isMoving)
+    {
+        return;
+    }
+    isMoving = true;
+    index--;
+    navChange();
+    animate(slider_main,{left:-800*index},function()
+    {
+        if(index === 0)
+        {
+            slider_main.style.left = "-2400px";
+            index = 3;
+        }
+        isMoving = false; 
+    })
+}
+
+    var timer = setInterval(next,3000);
+    
+    slider.onmouseover = function()
+    {
+        clearInterval(timer);
+    }
+
+    slider.onmouseout = function()
+    {
+        timer = setInterval(next,3000);
+    }
+
+    right.onclick = next;
+    
+    left.onclick = pre;
+
+    for(var i=0;i<oNavlist.length;i++)  
+    {
+        oNavlist[i].idx = i;  // i依序給按鈕號碼(是物件就能賦予值style)
+        oNavlist[i].onclick = function(){
+            index = this.idx + 1;        //圖片和按鈕下標差1
+            navChange();
+            animate(slider_main,{left:-900*index});
+        }
+    }
+
+    function navChange()
+    {
+        for(var i=0;i<oNavlist.length;i++)
+        {
+            oNavlist[i].className = '';
+        }
+        if(index === 4)
+        {
+            oNavlist[0].className = 'active';
+        }
+        else if(index === 0)
+        {
+            oNavlist[2].className = 'active';
+        }
+        else
+        {
+            oNavlist[index-1].className = 'active';
+        }
+        
+    }
+</script>
+
+
+
+<!--關於我們-->  
+
+<div class="about-us">
+    <h1>關於我們</h1>
+    <div class="region">
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <div class="circle-3"></div>
+    <div class="circle-4"></div>
+        <div class="article">
+            <p>我們是國立彰化師範大學資訊管理學系的學生，夥伴一共有六位，並以「六人行」這個隊名活動著，不久前以得展棉業Easyfit這個品牌做發想，延伸出了兩個屬於我們的文創商品，分別是Easymeet及Easytour。主要是想分享緣分的奧妙以及台灣的在地風情，加上我們快要畢業了，想把這份美好及回憶與大家分享！因此我們創辦了fb跟ig這兩個粉絲專頁來推廣得展及分享我們的文創商品，也請大家多多指教！</p>
+        </div>
+    </div>
+</div>
+
+
+
+<!--最新消息-->
+
+<div class="news">
+    <h1>最新消息</h1>
+        <div class="line"></div>
+        <div class="container-2">
+            <span><a href="wallpaper.html" id="news1"> 最新11月的主題出來囉 </a></span>
+            <span><a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132" target="_blank" id="news2">新開設FB粉專囉</a></span>
+            <span><a href="https://www.instagram.com/easyfit_tour_meet/" target="_blank" id="news3">我們instagram帳號也創立囉</a></span>
+        </div>
+</div>
+
+
+
+<!--聯絡我們-->
+
+<div class="bottom">
+    <div class="container-3">
+        <div class="row">
+            <div class="footer-logo">
+                <img src="logo_white.png" width="200" height="80">
+            </div>
+            <div class="footer_contact_us">
+                <h3>聯絡我們</h3>
+                <p>FB: <a href="https://www.facebook.com/%E9%81%87%E8%A6%8BEasyfit-%E9%99%AA%E4%BD%A0%E9%81%8A%E5%8F%B0%E7%81%A3-100955495455132" target="_blank">遇見 Easyfit，陪你遊台灣</a></p>
+                <p>IG: <a href="https://www.instagram.com/easyfit_tour_meet/" target="_blank">六人行</a></p>
+                <p>E-mail: friends2021111@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
